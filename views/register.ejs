@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>CRUD</title>
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                Pand-ai
+            </a>
+        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExample01">
+                <ul class="navbar-nav me-auto mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">     
+        <div class="card border-secondary">  
+            <div class="card-header">Registrar</div>
+            <div class="card-body">
+                <form action="/register" method="POST">
+                    
+                    <div class="mb-3">
+                        <label for="usuarios" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="user" name="user" tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="usuarios" class="form-label">Contraseña</label>
+                        <input type="text" class="form-control" id="pass" name="pass" tabindex="1">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
+                    <a href="/login" class="btn btn-success">Login</a>
+
+                </form>
+            </div>
+        </div>        
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

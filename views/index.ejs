@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <title>CRUD</title>
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                Pand-ai
+            </a>
+        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExample01">
+                <ul class="navbar-nav me-auto mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div  eblclass="container">
+
+        <div class="py-5 text-center">
+            <h2>Control de preguntas</h2>
+            <p class="lead">Esta paguina web fue diseñada para poder Agregar, Eliminar y Actualizar las preguntas del bot de WhatsApp Pand-ai el cual fue desarrollado por el grupo Panda Proyect que no tiene nada que ver con salvar ni preservar a los pandas del mundo.</p>
+        </div>
+
+        <a href="/create" class="btn btn-outline-primary mt-4"><i class='bx bxs-plus-circle bx-md'></i></a>    
+      
+        <table class="table table-bordered table-hover table-striped text-center mt-4">
+            <thead>
+                <tr class="bg-primary text-white">
+                    <th scope="col">ID</th>
+                    <th scope="col">PREGUNTA</th>
+                    <th scope="col">CLAVE</th>
+                    <th scope="col">RESPUESTA</th>
+                    <th scope="col">TIPO</th>         
+                    <th scope="col">ACCIONES</th>            
+                </tr>
+            </thead>
+            <tbody>
+                <% results.forEach((consultas)=>{ %>
+                <tr>  
+                    <td><%= consultas.id %></td>
+                    <td><%= consultas.pregunta %></td>
+                    <td><%= consultas.clave %></td>
+                    <td><%= consultas.respuesta %></td>
+                    <td><%= consultas.tipo %></td>
+                    <td>
+                        <a href="/edit/<%= consultas.id %>" class="btn btn-outline-info"><i class='bx bxs-edit'></i></a>
+                        <a href="/delete/<%= consultas.id %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'></i></a>                   
+                    </td>
+                </tr>                                   
+                <% }) %>
+            </tbody>
+        </table>
+
+        <footer class="my-5 pt-5 text-center text-small">
+            <p class="mb-1">&copy; 2023 Panda Project</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Pandas</a></li>
+                <li class="list-inline-item"><a href="#">Coipo</a></li>
+            </ul>
+        </footer>
+      
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>    
+</body>
+</html>
